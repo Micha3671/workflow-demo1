@@ -1,0 +1,25 @@
+name: my-workflow
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from lint & from ${{ github.ref }}"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from test & from ${{ github.ref }}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from deploy & from ${{ github.ref }}"
